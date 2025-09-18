@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/assets/images/icon.svg">
+    <title>Download Pricing Document | 96 studios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 100%px;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #005ba1;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .download-card {
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .download-card h2 {
+            color: #005ba1;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .file-icon {
+            width: 50px;
+            height: 50px;
+            background: #e6f2ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #005ba1;
+            font-size: 24px;
+        }
+        
+        .file-details h3 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .file-details p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .password-form {
+            margin: 25px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #005ba1;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #005ba1;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #004885;
+            transform: translateY(-2px);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .whatsapp-option {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .whatsapp-option h3 {
+            margin-bottom: 15px;
+            color: #005ba1;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        .error-message {
+            color: #d32f2f;
+            margin-top: 8px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .file-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        /*================NAVIGATION TAB================*/
+.breadcrumb {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 20px 0;
+}
+
+.breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '/';
+    margin: 0 10px;
+    color: #999;
+    font-weight: 300;
+}
+
+.breadcrumb a {
+    color: #4285f4;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #3367d6;
+}
+
+.breadcrumb li:last-child {
+    color: #666;
+    font-weight: 500;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-file-pdf"></i> Download Pricing Document</h1>
+        </div>
+        <div class="breadcrumb">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li>Pricing</li>
+    </ul>
+</div>
+        <div class="content">
+            <div class="download-card">
+                <h2><i class="fas fa-lock"></i> Secure Download</h2>
+                
+                <div class="file-info">
+                    <div class="file-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-details">
+                        <h3>96studios_pricing_2025.pdf</h3>
+                        <p>PDF Document • 2.4 MB • <span id="update-time">Updated 2 days ago</span></p>
+                    </div>
+                </div>
+                                
+                <div class="password-form">
+                    <div class="form-group">
+                        <label for="password">Enter Password</label>
+                        <input type="password" id="password" placeholder="Type your password here">
+                        <div class="error-message" id="password-error">
+                            Incorrect password. Please try again.
+                        </div>
+                    </div>
+                    
+                    <button class="btn" id="download-btn">
+                        <i class="fas fa-download"></i> Download Now
+                    </button>
+                </div>
+            </div>
+            
+            <div class="whatsapp-option">
+                <h3><i class="fab fa-whatsapp"></i> Don't have the password?</h3>
+                <a href="https://wa.me/27817925033?text=Hello%20I%20would%20like%20to%20request%20access%20to%20the%20pricing%20document" class="whatsapp-btn" target="_blank">
+                     Request via WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 96S tudios. All rights reserved.</p>
+            <p>Confidentiality of the document is protected by law.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.getElementById('download-btn');
+            const passwordInput = document.getElementById('password');
+            const passwordError = document.getElementById('password-error');
+            const updateTimeElement = document.getElementById('update-time');
+            
+            // Set the correct password here
+            const correctPassword = "pricing025";
+            
+            // Set the last update date (format: YYYY-MM-DD)
+            const lastUpdateDate = '2025-09-12';
+            
+            // Calculate days since last update
+            function updateTimeSinceLastUpdate() {
+                const lastUpdate = new Date(lastUpdateDate);
+                const now = new Date();
+                
+                // Calculate difference in milliseconds
+                const diffTime = Math.abs(now - lastUpdate);
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                
+                // Update the text
+                if (diffDays === 0) {
+                    updateTimeElement.textContent = 'Updated today';
+                } else if (diffDays === 1) {
+                    updateTimeElement.textContent = 'Updated yesterday';
+                } else {
+                    updateTimeElement.textContent = `Updated ${diffDays} days ago`;
+                }
+            }
+            
+            // Initialize the update time
+            updateTimeSinceLastUpdate();
+            
+            downloadBtn.addEventListener('click', function() {
+                if (passwordInput.value === correctPassword) {
+                    // Password is correct - simulate download
+                    passwordError.style.display = 'none';
+                    passwordInput.style.borderColor = '#ddd';
+                    
+                    // Show success message
+                    alert('Password accepted! Download starting...');
+                    
+                    // In a real implementation, you would trigger the actual download here
+                    // For demonstration, we'll just simulate it
+                    downloadBtn.innerHTML = '<i class="fas fa-check"></i> Download Started!';
+                    downloadBtn.style.background = '#4CAF50';
+                    
+                    // Disable the button after click
+                    downloadBtn.disabled = true;
+                    
+                    // Simulate redirect to actual file after 2 seconds
+                    setTimeout(function() {
+                        window.location.href = '/assets/doc/96studios_pricing_2025.pdf'; 
+                    }, 2000);
+                    
+                } else {
+                    // Password is incorrect
+                    passwordError.style.display = 'block';
+                    passwordInput.style.borderColor = '#d32f2f';
+                    passwordInput.focus();
+                }
+            });
+            
+            // Allow submitting with Enter key
+            passwordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    downloadBtn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/images/icon.svg">
+    <meta name="theme-color" content="#004370">
+    <title>About Us - 96 Studios</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/login.css">
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .foot-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+       /* Header Styles - Replaced with Google Maps */
+        .map-header {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+        
+        .map-container {
+            height: 100%;
+            width: 100%;
+        }
+        
+
+        
+        .map-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .map-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .map-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .map-content p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+        }
+        
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: #2c3e50;
+        }
+        
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        /* Why Choose Us Section */
+        .feature {
+            flex: 0 0 calc(33.333% - 30px);
+            margin-bottom: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .step {
+            flex: 0 0 calc(33.333% - 20px);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 30px;
+        }
+        
+        .payment-icon {
+            font-size: 1.3rem;
+            color: #555;
+            padding-top: 7px;
+        }
+        
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .payment-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .payment-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .copyright {
+            text-align: right;
+            margin-top: 15px;
+
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .feature, .step {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .feature, .step {
+                flex: 0 0 100%;
+            }
+            
+
+            
+            /* Footer responsive styles */
+            footer {
+                padding: 10px 0;
+                font-size: 0.85rem; /* Smaller font size for mobile */
+            }
+
+            
+
+            .payment-icon {
+                font-size: 1.4rem; /* Smaller payment icons */
+            }
+            
+            .copyright {
+                font-size: 0.8rem; /* Slightly smaller copyright text */
+            }
+        }
+
+        /* Extra small devices (phones, 600px and down) */
+        @media (max-width: 600px) {
+
+            .payment-line {
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-top: 10px;
+            }
+
+            .payment-line span {
+                display: none;
+            }
+            
+            .payment-icons {
+                display: none;
+            }
+            
+            .payment-icon {
+                font-size: 1.2rem;
+            }
+            
+            .copyright {
+            padding-top: 5px;
+            font-size: 0.75rem;
+            text-align: center;  
+            display: block;      
+            width: 100%;        
+        }
+        }
+
+        /*================NAVIGATION TAB================*/
+        .breadcrumb {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0px 0;
+        }
+
+        .breadcrumb ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: '/';
+            margin: 0 10px;
+            color: #999;
+            font-weight: 300;
+        }
+
+        .breadcrumb a {
+            color: #4285f4;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: #3367d6;
+            text-decoration: underline;
+        }
+
+        .breadcrumb li:last-child {
+            color: #666;
+            font-weight: 500;
+        }
+            
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="breadcrumb">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li>About Us</li>
+    </ul>
+</div>
+   
+    
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="section-content">
+                <p style="text-align: center; margin-bottom: 0px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    96 Studios specializes in high-quality graphic design solutions for businesses and individuals. Our team of creative professionals is dedicated to delivering visually stunning designs that effectively communicate your brand message.
+                </p>
+            </div>
+        </div>
+    </section>
+  
+    <section id="why-choose-us" style="background: #f1f5f9; margin-bottom: -20px;">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="section-content">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Creative Excellence</h3>
+                    <p>Our designers combine artistic talent with marketing savvy to create designs that are both beautiful and effective.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Turnaround</h3>
+                    <p>We respect your time with efficient workflows that deliver quality designs within your deadlines.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Professional quality designs at prices that work for businesses of all sizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="process">
+        <div class="foot-container">
+            <h2 class="section-title">Our Design & Payment Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Add to Cart</h3>
+                    <p>Select your desired design services and add them to your cart. Choose from our standard packages or request a custom quote.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design Tracking</h3>
+                    <p>After checkout, access your personalized dashboard to track progress, submit materials, and communicate with your designer.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Payment Confirmation</h3>
+                    <p>Receive payment confirmation and project details. Your design process begins immediately after payment verification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps Header Section -->
+    <div class="map-header">
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.227635923124!2d29.696500675657404!3d-23.774906969472866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6c78ba089f6b5%3A0x28ab91810f8ba04e!2s96%20studios!5e0!3m2!1sen!2sza!4v1755295278496!5m2!1sen!2sza" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div> 
+
+    <section class="footer" style="margin-top: -50px; margin-bottom: -60px;">
+<footer id="footer">
+    <!-- top footer -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 hidden class="footer-title">About Us</h3>
+                    
+                        <p style="margin-top: 0px; padding-bottom: 0px;">We are Graphic Design based studio, offering Creative & Professional designs.</p>
+                        <ul class="footer-links" style="white-space: nowrap">
+                            <li><a><i class="fa fa-map-marker"></i>462 Sebayeng unit d</a></li>
+                            <li><a><i class="fa fa-phone"></i>(+27) 817 925 033</a></li>
+                            <li><a><i class="fa fa-envelope"></i>Support@96Studios.co.za</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix visible-xs"></div>
+
+              <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Information</h3>
+                        <ul class="footer-links">
+                            <li><a href="https://wa.me/27817925033" target="_blank">Contact Us</a></li>
+                            <li><a href="/privacy-policy.html" target="_blank">Privacy & Policy</a></li>
+                            <li><a href="/terms-of-service.html" target="_blank" id="footer-terms">Terms of Service</a></li>
+                            <li><a href="/client-agreement.html" target="_blank">client Agreement</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Service</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" onclick="showAuth()">My Account</a></li>
+                            <li><a href="#" onclick="showAuth()">Track design</a></li>
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="https://wa.me/27817925033" target="_blank">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+</section>
+
+        <div class="foot-container">
+            <div class="footer-content">
+                <div class="payment-line">
+                    <span>Payment method:</span>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa payment-icon"></i>
+                        <i class="fab fa-cc-mastercard payment-icon"></i>
+                        <i class="fas fa-money-bill-wave payment-icon"></i>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 96 Studios. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,4302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="/assets/images/icon.svg">
+    <meta name="theme-color" content="#004370">
+    <title>motion creatives - 96 Studios</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/media.css">
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <style>
+      :root {
+            --primary: #004370;
+            --primary-dark: #004370;
+            --primary-light: #3b82f6;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --gray-light: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+       
+        .design-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00c510;
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .design-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .design-btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .design-btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .design-services {
+            margin-bottom: 60px;
+        }
+
+        .design-section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+
+        .design-container {
+            width: 90%;
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 20px 0; 
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .design-service-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .design-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .design-service-content {
+            padding: 25px;
+        }
+
+        .design-service-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .design-service-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00c510;
+            margin-bottom: 15px;
+        }
+
+        .design-total-price {
+            color: #00c510;
+        }
+
+        .design-service-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .design-tier-selector {
+            display: flex;
+            background: #00c510;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .design-tier-option {
+            flex: 1;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .design-tier-option.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .design-tier-details {
+            display: none;
+        }
+
+        .design-tier-details.active {
+            display: block;
+        }
+
+        .design-features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .design-features-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .design-features-list li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .design-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .design-footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .design-footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .design-footer-about {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .design-footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .design-footer-links {
+            list-style: none;
+        }
+
+        .design-footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .design-footer-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .design-footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-light);
+        }
+
+        .design-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .design-social-links a {
+            color: white;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .design-social-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .design-footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .design-hero {
+                padding: 80px 0;
+            }
+            
+            .design-hero-title {
+                font-size: 36px;
+            }
+            
+            .design-hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .design-section-title {
+                font-size: 28px;
+            }
+            
+            .design-btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .design-btn-outline {
+                margin-left: 0;
+            }
+            
+            .design-modal-image-container {
+                height: 250px;
+            }
+        }
+
+        /* Utility Classes */
+        .design-text-center {
+            text-align: center;
+        }
+        
+        .design-mb-4 {
+            margin-bottom: 1rem;
+        }
+        
+        .design-mt-4 {
+            margin-top: 1rem;
+        }
+        
+        .design-hidden {
+            display: none;
+        }
+
+        /* Custom controls for website service */
+        .design-section-controls {
+            margin-bottom: 15px;
+        }
+
+        .design-section-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .design-section-selector label {
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .design-section-selector select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--gray-light);
+            background: white;
+            flex: 1;
+        }
+
+        .design-addon-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .design-addon-toggle:last-child {
+            border-bottom: none;
+        }
+
+        .design-addon-toggle label {
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .design-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .design-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .design-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .design-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .design-slider {
+            background-color: var(--primary);
+        }
+
+        input:checked + .design-slider:before {
+            transform: translateX(26px);
+        }
+
+        .design-price-breakdown {
+            background: var(--gray-light);
+            padding: 15px;
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+        }
+
+        .design-price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .design-price-total {
+            font-weight: 600;
+            border-top: 1px solid var(--gray);
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+
+        .design-price-total span {
+         color: #00c510;
+        }
+
+        /* Website Design Service Specific Styles */
+        .design-section-features {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-light);
+        }
+
+        .design-section-features h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .design-section-features ul {
+            margin-left: 20px;
+        }
+
+        .design-section-features li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .design-addon-toggle {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .design-addon-toggle:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .design-addon-description {
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 5px;
+            margin-left: 60px;
+            line-height: 1.4;
+        }
+
+        .design-price-total {
+            text-align: right;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            padding-top: 15px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .design-addons-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .design-addon-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .design-addon-label {
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .design-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .design-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* ======== LOGO CONTAINER ======== */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 30px;
+    margin: 0 auto 2rem;
+    background: radial-gradient(circle, rgba(1, 180, 238, 1) 0%, rgba(18, 117, 174, 1) 40%, rgba(31, 70, 127, 1) 100%);
+    border-radius: 15px;
+}
+
+.logo-mc {
+    max-width: 180px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-mc:hover {
+    transform: scale(1.05);
+}
+
+
+/*==========================HEADER SECTION==============================*/
+
+        :root {
+            --quantum-primary: #004370; /* SA Green */
+            --quantum-primary-hover: #009B5B;
+            --quantum-accent: #FFB81C; /* SA Gold */
+            --quantum-text: hsl(0, 0%, 10%);
+            --quantum-text-light: hsl(0, 0%, 98%);
+            --quantum-bg: hsl(0, 0%, 100%);
+            --quantum-glass: rgba(255, 255, 255, 0.92);
+            --quantum-border: hsl(0, 0%, 90%);
+            --quantum-gap: 1.5rem;
+            --quantum-ease: cubic-bezier(0.25, 1, 0.5, 1);
+            --quantum-duration: 0.6s;
+            --quantum-nav-height: 80px;
+            --quantum-nav-height-scrolled: 70px;
+        }
+
+        /* ===== DARK MODE ===== */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --quantum-text: hsl(0, 0%, 98%);
+                --quantum-text-light: hsl(0, 0%, 10%);
+                --quantum-bg: hsl(0, 0%, 8%);
+                --quantum-glass: rgba(20, 20, 20, 0.92);
+                --quantum-border: hsl(0, 0%, 15%);
+            }
+        }
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--quantum-bg);
+            color: var(--quantum-text);
+            padding-top: calc(48px + var(--quantum-nav-height));
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===== DYNAMIC CONTEXT BAR ===== */
+        .context-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            background: var(--quantum-primary);
+            color: var(--quantum-text-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 calc(var(--quantum-gap) * 2);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        /* Help Container Styles - Desktop Only */
+        .help-container {
+            display: none; 
+            align-items: center;
+            gap: 0.75rem;
+            margin-right: 2rem;
+            color: var(--quantum-text-light);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .help-container i {
+            font-size: 0.9rem;
+            color: var(--quantum-accent);
+        }
+
+        .help-number {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Show on desktop only */
+        @media (min-width: 993px) {
+            .help-container {
+                display: flex;
+            }
+            
+            .promo-container {
+                flex-grow: 1;
+                margin-left: 1rem;
+            }
+        }
+
+        .help-container:hover {
+            opacity: 0.9;
+        }
+
+        .help-container:hover i {
+            transform: rotate(15deg);
+            transition: transform 0.3s var(--quantum-ease);
+        }
+
+        .promo-container {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            flex-grow: 1;
+        }
+
+        .promo-track {
+            display: flex;
+            position: absolute;
+            white-space: nowrap;
+            will-change: transform;
+            animation: promo-scroll 40s linear infinite;
+        }
+
+        .promo-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 3rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
+            color: var(--quantum-text-light);
+        }
+
+        /* Desktop-only empty space coverage */
+        @media (min-width: 993px) {
+            .promo-item::after {
+                content: "•";
+                margin-left: 1.5rem;
+                color: rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            margin-left: 2rem;
+        }
+
+        .social-link {
+            color: var(--quantum-text-light);
+            opacity: 0.8;
+            transition: all 0.3s var(--quantum-ease);
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover {
+            opacity: 1;
+        }
+
+        /* ===== MAIN NAVIGATION ===== */
+        .quantum-nav {
+            position: fixed;
+            top: 48px;
+            left: 0;
+            width: 100%;
+            height: var(--quantum-nav-height);
+            background: var(--quantum-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 calc(var(--quantum-gap) * 2);
+            z-index: 999;
+            border-bottom: 1px solid var(--quantum-border);
+            transition: all var(--quantum-duration) var(--quantum-ease);
+        }
+
+        .nav-scrolled {
+            height: var(--quantum-nav-height-scrolled);
+        }
+
+        .nav-logo {
+            height: 28px;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            height: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0 0.5rem;
+        }
+
+        .nav-link {
+            position: relative;
+            color: var(--quantum-text);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            padding: 0 0.75rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s var(--quantum-ease);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0.75rem;
+            width: calc(100% - 1.5rem);
+            height: 2px;
+            background: var(--quantum-primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s var(--quantum-ease);
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-link:hover {
+            color: var(--quantum-primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* SA FLAG & CURRENCY */
+        .currency-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 50px;
+            background: rgba(0, 0, 0, 0.03);
+            transition: all 0.3s var(--quantum-ease);
+        }
+
+        .currency-selector:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .currency-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--quantum-text);
+        }
+
+        /* ACTION BUTTONS */
+        .action-btn {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s var(--quantum-ease);
+            background: transparent;
+            border: none;
+        }
+
+        .action-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .action-btn i {
+            font-size: 1.1rem;
+            color: var(--quantum-text);
+        }
+
+        .badge-counter {
+            position: absolute;
+            top: -6px;
+            right: -4px;
+            width: 18px;
+            height: 18px;
+            background: #00c510;
+            color: var(--quantum-text-light);
+            border-radius: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 700;
+            pointer-events: none;
+        }
+
+        .cart-counter {
+            position: absolute;
+            top: -3px;
+            right: -15px;
+            font-size: 0.7rem;
+            background-color: #ff4757;
+            padding: 3px 6px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== CREATIVE HAMBURGER MENU ===== */
+        .mobile-menu-btn {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s var(--quantum-ease);
+            position: relative;
+        }
+
+        .menu-line {
+            width: 20px;
+            height: 2px;
+            background-color: var(--quantum-text);
+            margin: 3px 0;
+            transition: all 0.3s var(--quantum-ease);
+            transform-origin: center;
+            position: relative;
+        }
+
+        /* Creative hamburger animation */
+        .mobile-menu-btn .menu-line:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        
+        .mobile-menu-btn .menu-line:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        
+        .mobile-menu-btn .menu-line:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-menu-btn.active .menu-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            transition-delay: 0.3s;
+        }
+
+        .mobile-menu-btn.active .menu-line:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition-delay: 0.1s;
+        }
+
+        .mobile-menu-btn.active .menu-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            transition-delay: 0.2s;
+        }
+
+        /* Hamburger menu hover effect */
+        .mobile-menu-btn:hover .menu-line:nth-child(1) {
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu-btn:hover .menu-line:nth-child(3) {
+            transform: translateY(2px);
+        }
+        
+        .mobile-menu-btn.active:hover .menu-line {
+            transform: none;
+        }
+
+        /* ===== MODERN MOBILE MENU ===== */
+        .mobile-menu {
+            position: fixed;
+            top: calc(48px + var(--quantum-nav-height));
+            left: 0;
+            width: 100%;
+            height: calc(100vh - (48px + var(--quantum-nav-height)));
+            background: var(--quantum-glass);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem calc(var(--quantum-gap) * 2);
+            clip-path: circle(0% at 100% 0);
+            transition: clip-path 0.8s var(--quantum-ease);
+            overflow-y: auto;
+            border-bottom: 5px solid var(--quantum-primary);
+        }
+
+        .mobile-menu.active {
+            clip-path: circle(150% at 100% 0);
+        }
+
+        .mobile-nav-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--quantum-border);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s var(--quantum-ease);
+        }
+
+        .mobile-menu.active .mobile-nav-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu.active .mobile-nav-item:nth-child(1) {
+            transition-delay: 0.2s;
+        }
+        
+        .mobile-menu.active .mobile-nav-item:nth-child(2) {
+            transition-delay: 0.3s;
+        }
+        
+        .mobile-menu.active .mobile-nav-item:nth-child(3) {
+            transition-delay: 0.4s;
+        }
+        
+        .mobile-menu.active .mobile-nav-item:nth-child(4) {
+            transition-delay: 0.5s;
+        }
+        
+        .mobile-menu.active .mobile-nav-item:nth-child(5) {
+            transition-delay: 0.6s;
+        }
+
+        .mobile-nav-link {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--quantum-text);
+            text-decoration: none;
+            transition: all 0.3s var(--quantum-ease);
+            display: inline-block;
+            position: relative;
+            padding: 0.2rem 0;
+        }
+
+        /* Mobile and tablet descriptions */
+        @media (max-width: 992px) {
+            .mobile-nav-description {
+                display: block;
+                font-size: 0.8rem;
+                color: rgba(var(--quantum-text), 0.7);
+                margin-top: 0.rem;
+                font-weight: 400;
+                transition: all 0.3s var(--quantum-ease);
+            }
+            
+            .mobile-nav-link:hover .mobile-nav-description {
+                color: var(--quantum-primary);
+            }
+        }
+
+        .mobile-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--quantum-primary);
+            transition: width 0.4s var(--quantum-ease);
+            text-decoration: none;
+        }
+
+        .mobile-nav-link:hover::after {
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .mobile-nav-link:hover {
+            color: var(--quantum-primary);
+            transform: translateX(8px);
+            text-decoration: none;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes promo-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 119, 73, 0.2);
+            transform: scale(0);
+            animation: ripple 0.8s var(--quantum-ease);
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            :root {
+                --quantum-gap: 1.25rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            /* New flex order for mobile layout */
+            .quantum-nav {
+                justify-content: flex-start;
+            }
+            
+            .nav-logo {
+                order: 2;
+                margin: 0 auto;
+            }
+            
+            .mobile-menu-btn {
+                order: 1;
+                margin-right: 1rem;
+            }
+            
+            .nav-actions {
+                order: 3;
+                margin-left: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: calc(48px + var(--quantum-nav-height-scrolled));
+            }
+
+            .quantum-nav {
+                padding: 0 var(--quantum-gap);
+                height: var(--quantum-nav-height-scrolled);
+            }
+
+            .context-bar {
+                padding: 0 var(--quantum-gap);
+            }
+
+            .mobile-menu {
+                top: calc(30px + var(--quantum-nav-height-scrolled));
+                height: calc(100vh - (48px + var(--quantum-nav-height-scrolled)));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .promo-item {
+                margin-right: 2rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+                margin-left: 1rem;
+            }
+
+            .mobile-nav-link {
+                font-size: 1.25rem;
+            }
+        }
+
+        .nav-item.dropdown { 
+        position: relative;
+        display: inline-block; 
+        }
+
+        .nav-item.dropdown .dropdown-menu {
+        display: none;
+        position: absolute;
+        background: #ffffff;
+        min-width: 200px;
+        z-index: 1;
+        border-radius: 4px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        }
+
+        /* Style for dropdown links only */
+        .dropdown-menu a {
+        color: #333333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #f1f1f1;
+        transition: background-color 0.3s;
+        white-space: nowrap;
+
+        }
+
+        .dropdown-menu a:hover {
+        background-color: #f8f8f8;
+        }
+
+        /* Small arrow indicator */
+        .nav-item.dropdown > .nav-link:after {
+        content: " ▼";
+        font-size: 0.7em;
+        }
+
+
+
+/*================ADVERTISER SECTION================*/
+
+
+
+/* Advertiser Embed Styles */
+.advertiser-embed-container {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 70vh; 
+    background: white;
+    z-index: 9999;
+    overflow: hidden;
+    transition: top 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.advertiser-embed-container.active {
+    top: 0;
+}
+
+.advertiser-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+#advertiserCloseBtn {
+ position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: #16222e;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 99999;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .advertiser-embed-container {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .advertiser-embed-container {
+        height: 80vh; 
+    }
+}
+
+
+ /* Coming Soon Popup Styles */
+        .coming-soon-popup2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .coming-soon-popup2.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-contents {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 15px;
+            padding: 30px;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: scale(0.7);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+        
+        .coming-soon-popup2.active .popup-contents {
+            transform: scale(1);
+        }
+        
+        .popup-contents h2 {
+            color: #4776E6;
+            margin-bottom: 15px;
+        }
+        
+        .popup-contents p {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+        }
+        
+        .close-popup2 {
+            background: #004370 ;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .instructions {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        
+        .instructions h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .instructions p {
+            margin-bottom: 10px;
+            color: #34495e;
+            line-height: 1.5;
+        }
+        
+        .instructions code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+     /*================NAVIGATION TAB================*/
+        .breadcrumb {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0px 0;
+        }
+
+        .breadcrumb ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: '/';
+            margin: 0 10px;
+            color: #999;
+            font-weight: 300;
+        }
+
+        .breadcrumb a {
+            color: #4285f4;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: #3367d6;
+        }
+
+        .breadcrumb li:last-child {
+            color: #666;
+            font-weight: 500;
+        }
+
+
+        .design-container {
+            width: 90%;
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 20px 0; 
+        }
+
+        .design-section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            
+        }
+
+        /* Design Showcase Container */
+        .design-showcase-container {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            height: 480px; 
+            width: 100%; 
+        }
+
+        .design-showcase-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .design-showcase-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .design-section-title {
+                font-size: 28px;
+            }
+            
+            .design-grid {
+                grid-template-columns: 1fr;
+                
+            }
+            
+            .design-showcase-container {
+               height: 480px;
+            }
+        }
+     
+    </style>
+</head>
+<body>
+
+<!-- ====================HEADER SECTION PROMO====================== -->
+
+     <!-- TOP PROMO BAR -->
+    <div class="context-bar">
+          
+        <div class="promo-container">
+            <div class="promo-track">
+                <div class="promo-item">
+                    <span>Design • track • review online</span>
+                </div>
+                <div class="promo-item">
+                    <span>Get up to 10% discounts</span>
+                </div>
+                <div class="promo-item">
+                    <span>South Africa's Creatives</span>
+                </div>
+                <div class="promo-item">
+                    <span>Design • track • review online</span>
+                </div>
+                <div class="promo-item">
+                    <span>Get up to 10% discounts</span>
+                </div>
+                <div class="promo-item">
+                    <span>South Africa's Creatives</span>
+                </div>
+                <div class="promo-item">
+                    <span>Design • track • review online</span>
+                </div>
+                <div class="promo-item">
+                    <span>Get up to 10% discounts</span>
+                </div>
+                <div class="promo-item">
+                    <span>South Africa's Creatives</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="help-container" style="margin-left: 45px;">
+        <i class="fas fa-phone-alt" style="color: #00c510;"></i>
+        <div class="help-text">
+            NEED HELP?
+            <span class="help-number">081 792 5033</span>
+        </div>
+    </div>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/96studioss/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/ninetysixgraphics" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@96.studios6?_t=ZM-8yOrD3eeF5c&_r=1" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="quantum-nav" id="quantumNav">
+        <!-- Hamburger menu moved before logo -->
+        <button class="mobile-menu-btn" id="mobileMenuButton" aria-label="Toggle menu" style="outline: none;">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
+
+       
+        <div class="nav-menu">
+            <!-- Graphic Design with Dropdown -->
+            <div class="nav-item dropdown">
+                <a href="/services.html" class="nav-link">Graphic Design</a>
+                <div class="dropdown-menu">
+                <a href="#">Photography</a>
+                <a href="https://onclick.96studios.co.za">Software and Computer</a>
+                <a href="#">Wall art and deco</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <a href="#" class="nav-link">Branding</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link show-advertiser-portal">Become an Advertiser</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" id="soon7" class="nav-link">Pricing</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Donate</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://wa.me/27817925033" class="nav-link" target="_blank">Support</a>
+            </div>
+           <div class="nav-item">
+                <a href="#" class="nav-link" id="faq-link">FAQ</a>
+            </div>
+           <div class="nav-item">
+                <a href="https://quote.96studios.co.za/" id="getquote" class="nav-link">Quote</a>
+            </div>
+            
+        </div>
+
+        <div class="nav-actions">
+
+             <div class="nav-item">
+                <a href="https://quote.96studios.co.za/" id="quote" class="nav-link">Quote</a>
+            </div>
+            <!-- SA FLAG + ZAR CURRENCY -->
+            <div class="currency-selector">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/1200px-Flag_of_South_Africa.svg.png" alt="SA Flag" class="flag-icon">
+                <span class="currency-text" style="margin-top: 4px;">ZAR</span>
+            </div>
+            
+            <!-- CART ICON -->
+            <button class="action-btn cart-trigger" id="cartBtn" style="outline: none;">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="badge-counter">0</span>
+            </button>
+            
+        <!-- PROFILE ICON -->
+        <button class="action-btn" id="accountBtn" style="outline: none;"  onclick="showAuth()">
+            <div id="profileIconContainer">
+                <i class="fas fa-user" id="defaultProfileIcon"></i>
+            </div>
+        </button>
+        </div>
+    </nav>
+
+    <!-- MODERN MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-nav-item">
+            <a href="/services.html" class="mobile-nav-link">Graphic Design
+                <span class="mobile-nav-description">Explore professional branding and custom visuals.</span>
+            </a>
+        </div>
+        <div class="mobile-nav-item">
+            <a href="#" class="mobile-nav-link">Photography
+                <span class="mobile-nav-description">Professional photography for products, events and portrait.</span>
+            </a>
+        </div>
+        <div class="mobile-nav-item">
+            <a href="https://onclick.96studios.co.za" class="mobile-nav-link">Software & Computer
+                <span class="mobile-nav-description">Find reliable hardware and software support.</span>
+            </a>
+        </div>
+        <div class="mobile-nav-item">
+            <a href="#" class="mobile-nav-link">Wall Art and deco
+                <span class="mobile-nav-description">Custom wall art designs for your space.</span>
+            </a>
+        </div>
+ 
+        <div class="mobile-nav-item">
+            <a href="#" class="mobile-nav-link">About Us
+                <span class="mobile-nav-description">A short brief about us and our mission</span>
+            </a>
+        </div>
+    </div>
+
+<!-- ====================HEADER SECTION END====================== -->
+
+        <!-- Page Load Overlay -->
+        <div id="page-load-overlay" class="overlay">
+            <div class="custom-loader"></div>
+        </div>
+
+        <!-- Advertiser Embed -->
+<div class="advertiser-embed-container" id="advertiserEmbed">
+    <button class="close-btn" id="advertiserCloseBtn">×</button>
+    <iframe class="advertiser-iframe" src="https://myad-portal.netlify.app/"></iframe>
+</div>
+
+<!-- Coming Soon Popup -->
+        <div class="coming-soon-popup2" id="comingSoonPopup2">
+            <div class="popup-contents">
+                <h2>Coming Soon!</h2>
+                <p>This feature is currently in development. Please check back soon.</p>
+                <button class="close-popup2" id="closePopup2">Got It!</button>
+            </div>
+        </div>
+
+
+<div class="breadcrumb">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li>Services</li>
+    </ul>
+</div>
+
+     <!-- Hero Section -->
+    <section class="hero">
+        <!-- Logo Container -->
+        <div class="logo-container" style="margin-top: 40px; margin-bottom: 20px;">
+            <img src="/assets/images/mc-logo.png" alt="Readesigner Logo" class="logo-mc">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="design-services">
+        <div class="design-container">
+            <div class="design-grid">
+                <!-- Logo Design -->
+                <div class="design-service-card" data-service="logo-design">
+                    <div class="design-service-content">
+                        <h3 class="design-service-title">Logo Design</h3>
+                        
+                        <div class="design-tier-selector">
+                            <div class="design-tier-option active" data-tier="starter">Starter</div>
+                            <div class="design-tier-option" data-tier="premium">Premium</div>
+                            <div class="design-tier-option" data-tier="pro">Pro</div>
+                        </div>
+                        
+                        <div class="design-tier-details active" data-tier="starter">
+                            <div class="design-service-price">R300</div>
+                            <p class="design-service-description">Perfect for startups needing a simple, effective logo.</p>
+                            <ul class="design-features-list">
+                                <li>2 design concept</li>
+                                <li>2 revision round</li>
+                                <li>delivery: project.zip</li>
+                            </ul>
+                            <button class="design-btn">Select Starter</button>
+                        </div>
+                        
+                        <div class="design-tier-details" data-tier="premium">
+                            <div class="design-service-price">R600</div>
+                            <p class="design-service-description">Comprehensive logo package for growing businesses.</p>
+                            <ul class="design-features-list">
+                                <li>3 design concepts</li>
+                                <li>3 revision rounds</li>
+                                <li>1 design showcase</li>
+                                <li>1 full redesign concept (if needed)</li>
+                                <li>delivery: project.zip</li>
+                            </ul>
+                            <button class="design-btn">Select Premium</button>
+                        </div>
+                        
+                        <div class="design-tier-details" data-tier="pro">
+                            <div class="design-service-price">R900</div>
+                            <p class="design-service-description">Complete branding solution for established companies.</p>
+                            <ul class="design-features-list">   
+                                <li>first priority</li>
+                                <li>5 design concepts</li>
+                                <li>5 revision rounds</li>
+                                <li>1 design pro showcase</li>
+                                <li>3 full redesign concepts (if needed)</li>
+                                <li>delivery: project.zip</li>
+                            </ul>
+                            <button class="design-btn">Select Pro</button>
+                        </div>
+                    </div>
+                </div>
+
+                
+        <!-- Poster Design -->
+<div class="design-service-card" data-service="poster-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Poster Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R200</div>
+            <p class="design-service-description">Eye-catching and impactful poster designs for events, promotions, or announcements.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>1 revision round</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Comprehensive poster package with enhanced visual impact.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Premium poster design with maximum visual impact and customization.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Flyer Design -->
+<div class="design-service-card" data-service="flyer-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Flyer Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R300</div>
+            <p class="design-service-description">Effective and distributable flyer designs to promote your business.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>1 revision round</li>
+                 <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Comprehensive flyer package for growing businesses.</p>
+            <ul class="design-features-list">
+                 <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R900</div>
+            <p class="design-service-description">Complete flyer solution with maximum customization.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Brochure Design -->
+<div class="design-service-card" data-service="brochure-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Brochure Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Informative and visually appealing brochure layouts.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>1 revision round</li>
+                 <li>1-2 sided pages</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R800</div>
+            <p class="design-service-description">Comprehensive brochure package for growing businesses.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>1-2 sided pages</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R1200</div>
+            <p class="design-service-description">Complete brochure solution with maximum customization.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>1-2 sided pages</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Banner Design -->
+<div class="design-service-card" data-service="banner-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Banner Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Custom digital or print banner designs.</p>
+            <ul class="design-features-list">
+                 <li>1 design concept</li>
+                <li>1 revision round</li>
+                 <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R800</div>
+            <p class="design-service-description">Comprehensive banner package for growing businesses.</p>
+            <ul class="design-features-list">
+                 <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R1200</div>
+            <p class="design-service-description">Complete banner solution with maximum customization.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>unlimited revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Business Card Design -->
+<div class="design-service-card" data-service="business-card-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Business Card Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R200</div>
+            <p class="design-service-description">Professional business card design for marketing.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>2 revision round</li>
+                 <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Comprehensive business card package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>4 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Premium business card design with special finishes.</p>
+            <ul class="design-features-list">
+                 <li>first priority</li>
+                <li>2 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+ <div class="design-container">        
+        <div class="design-grid">
+            <!-- Showcase Item 1 -->
+            <div class="design-showcase-container">
+                <img src="/assets/images/showcase1" alt="Brand Identity Design" class="design-showcase-image">
+            </div>
+        </div>
+    </div>
+
+<!-- Product Advert Design -->
+<div class="design-service-card" data-service="product-advert-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Product Advert Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R300</div>
+            <p class="design-service-description">Compelling advertisement designs for your products.</p>
+            <ul class="design-features-list">
+                 <li>1 design concept</li>
+                <li>2 revision round</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Comprehensive product advert package.</p>
+            <ul class="design-features-list">
+                <li>1 design concepts</li>
+                <li>3 revision rounds</li>
+                <li>1 design showcase</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R900</div>
+            <p class="design-service-description">Complete product advert solution with maximum impact.</p>
+            <ul class="design-features-list">
+                 <li>first priority</li>
+                 <li>1 design concepts</li>
+                 <li>5 revision rounds</li>
+                 <li>1 design pro showcase</li>
+                 <li>3 full redesign concepts (if needed)</li>
+                 <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Calendar Design -->
+<div class="design-service-card" data-service="calendar-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Calendar Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R200</div>
+            <p class="design-service-description">Customizable calendar designs for brand promotion.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>2 revision round</li>
+                 <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Comprehensive calendar design package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Premium calendar design with maximum customization.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Letterhead Design -->
+<div class="design-service-card" data-service="letterhead-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Letterhead Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R200</div>
+            <p class="design-service-description">Elegant and branded stationery design.</p>
+            <ul class="design-features-list">
+                 <li>1 page design</li>
+                <li>2 revision rounds</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Comprehensive letterhead package.</p>
+            <ul class="design-features-list">
+                <li>1 page design</li>
+                <li>3 revision rounds</li>
+                <li>1 design showcase</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Premium letterhead design with full stationery suite.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                 <li>1 page design</li>
+                 <li>5 revision rounds</li>
+                 <li>1 design pro showcase</li>
+                 <li>3 full redesign concepts (if needed)</li>
+                 <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Menu Design -->
+<div class="design-service-card" 
+     data-service="Menu-design" 
+     data-pricing="per-page" 
+     data-base="300" 
+     data-extra="200">
+
+    <div class="design-service-content">
+        <h3 class="design-service-title">Menu Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="standard">Standard</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="standard">
+            <div class="design-service-price">R300 + R200/page</div>
+            <p class="design-service-description">Appetizing and easy-to-navigate menu designs for restaurants.</p>
+
+            <!-- Page Selector -->
+            <div class="design-section-controls">
+                <div class="design-section-selector">
+                    <select class="design-page-count">
+                <option value="1">1 Page</option>
+                <option value="2">2 Pages</option>
+                <option value="3">3 Pages</option>
+                <option value="4">4 Pages</option>
+                <option value="5">5 Pages</option>
+                <option value="6">6 Pages</option>
+                <option value="7">7 Pages</option>
+                <option value="8">8 Pages</option>
+                <option value="9">9 Pages</option>
+                <option value="10">10 Pages</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>Additional pages at R200 each</li>
+                <li>3 design revisions</li>
+                <li>Print-ready files</li>
+                <li>Up to 10 pages maximum</li>
+            </ul>
+
+            <button class="design-btn">Select Standard</button>
+        </div>
+    </div>
+</div>
+
+<!-- CD Art Cover Design -->
+<div class="design-service-card" data-service="cd-art-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">CD Art Cover Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R200</div>
+            <p class="design-service-description">Creative cover art for music albums or media products.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>2 revision round</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Comprehensive CD art package.</p>
+            <ul class="design-features-list">
+                 <li>1 design concepts</li>
+                <li>3 revision rounds</li>
+                <li>1 design showcase</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Premium CD art design with complete packaging.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                 <li>1 design concepts</li>
+                 <li>5 revision rounds</li>
+                 <li>1 design pro showcase</li>
+                 <li>3 full redesign concepts (if needed)</li>
+                 <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Sign Design -->
+<div class="design-service-card" data-service="sign-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Sign Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R200</div>
+            <p class="design-service-description">Clear and effective sign designs for retail or offices.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>2 revision round</li>
+                <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Comprehensive sign design package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Premium sign design with complete signage system.</p>
+            <ul class="design-features-list">
+               <li>first priority</li>
+                <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+ <div class="design-container">        
+        <div class="design-grid">
+            <!-- Showcase Item 2 -->
+            <div class="design-showcase-container">
+                <img src="/assets/images/showcase2" alt="Brand Identity Design" class="design-showcase-image">
+            </div>
+        </div>
+    </div>
+
+<!-- Book Cover Design  -->
+<div class="design-service-card" 
+     data-service="Book-Cover-design" 
+     data-pricing="per-page" 
+     data-base="200" 
+     data-extra="100">
+
+    <div class="design-service-content">
+        <h3 class="design-service-title">Book Cover Design </h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="standard">Standard</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="standard">
+            <div class="design-service-price">R200 + R100/page</div>
+            <p class="design-service-description">Captivating cover design that sells your book.</p>
+
+            <!-- Page Selector -->
+            <div class="design-section-controls">
+                <div class="design-section-selector">
+                <select class="design-page-count">
+                <option value="1">1 Page</option>
+                <option value="2">2 Pages</option>
+                <option value="3">3 Pages</option>
+                <option value="4">4 Pages</option>
+                <option value="5">5 Pages</option>
+                <option value="6">6 Pages</option>
+                <option value="7">7 Pages</option>
+                <option value="8">8 Pages</option>
+                <option value="9">9 Pages</option>
+                <option value="10">10 Pages</option>
+                <option value="11">11 Pages</option>
+                <option value="12">12 Pages</option>
+                <option value="13">13 Pages</option>
+                <option value="14">14 Pages</option>
+                <option value="15">15 Pages</option>
+                <option value="16">16 Pages</option>
+                <option value="17">17 Pages</option>
+                <option value="18">18 Pages</option>
+                <option value="19">19 Pages</option>
+                <option value="20">20 Pages</option>
+                <option value="21">21 Pages</option>
+                <option value="22">22 Pages</option>
+                <option value="23">23 Pages</option>
+                <option value="24">24 Pages</option>
+                <option value="25">25 Pages</option>
+                <option value="26">26 Pages</option>
+                <option value="27">27 Pages</option>
+                <option value="28">28 Pages</option>
+                <option value="29">29 Pages</option>
+                <option value="30">30 Pages</option>
+                <option value="31">31 Pages</option>
+                <option value="32">32 Pages</option>
+                <option value="33">33 Pages</option>
+                <option value="34">34 Pages</option>
+                <option value="35">35 Pages</option>
+                <option value="36">36 Pages</option>
+                <option value="37">37 Pages</option>
+                <option value="38">38 Pages</option>
+                <option value="39">39 Pages</option>
+                <option value="40">40 Pages</option>
+                <option value="41">41 Pages</option>
+                <option value="42">42 Pages</option>
+                <option value="43">43 Pages</option>
+                <option value="44">44 Pages</option>
+                <option value="45">45 Pages</option>
+                <option value="46">46 Pages</option>
+                <option value="47">47 Pages</option>
+                <option value="48">48 Pages</option>
+                <option value="49">49 Pages</option>
+                <option value="50">50 Pages</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>Front cover design</li>
+                <li>Additional pages at R100 each</li>
+                <li>2 design revisions</li>
+                <li>Print-ready files</li>
+                <li>Up to 50 pages maximum</li>
+            </ul>
+
+            <button class="design-btn">Select Standard</button>
+        </div>
+    </div>
+</div>
+
+<!-- Board Design -->
+<div class="design-service-card" data-service="board-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Board Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R300</div>
+            <p class="design-service-description">Strategic designs for presentation boards.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>2 revision round</li>
+                <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Comprehensive board design package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R1200</div>
+            <p class="design-service-description">Premium board design with complete system.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>unlimited revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Invitation Card Design -->
+<div class="design-service-card" data-service="invitation-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Invitation Card Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R200</div>
+            <p class="design-service-description">Beautifully crafted invitation designs for special occasions.</p>
+            <ul class="design-features-list">
+                <li>1 page design</li>
+                <li>2 revision rounds</li>
+                <li>1-2 sided pages</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Comprehensive invitation package.</p>
+            <ul class="design-features-list">
+                <li>1 page design</li>
+                <li>3 revision rounds</li>
+                <li>1-2 sided pages</li>
+                <li>1 design showcase</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Premium invitation design with full suite.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                 <li>1 page design</li>
+                 <li>5 revision rounds</li>
+                 <li>1-2 sided pages</li>
+                 <li>1 design pro showcase</li>
+                 <li>3 full redesign concepts (if needed)</li>
+                 <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Membership Card Design -->
+<div class="design-service-card" 
+     data-service="Membership-Card-design" 
+     data-pricing="per-page" 
+     data-base="200" 
+     data-extra="30">
+
+    <div class="design-service-content">
+        <h3 class="design-service-title">Membership Card Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="standard">Standard</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="standard">
+            <div class="design-service-price">R200 + R30/page</div>
+            <p class="design-service-description">Professional membership card design with security features.</p>
+
+            <!-- Page Selector -->
+            <div class="design-section-controls">
+                <div class="design-section-selector">
+                    <select class="design-page-count">
+                <option value="1">1 Page</option>
+                <option value="2">2 Pages</option>
+                <option value="3">3 Pages</option>
+                <option value="4">4 Pages</option>
+                <option value="5">5 Pages</option>
+                <option value="6">6 Pages</option>
+                <option value="7">7 Pages</option>
+                <option value="8">8 Pages</option>
+                <option value="9">9 Pages</option>
+                <option value="10">10 Pages</option>
+                <option value="11">11 Pages</option>
+                <option value="12">12 Pages</option>
+                <option value="13">13 Pages</option>
+                <option value="14">14 Pages</option>
+                <option value="15">15 Pages</option>
+                <option value="16">16 Pages</option>
+                <option value="17">17 Pages</option>
+                <option value="18">18 Pages</option>
+                <option value="19">19 Pages</option>
+                <option value="20">20 Pages</option>
+                <option value="21">21 Pages</option>
+                <option value="22">22 Pages</option>
+                <option value="23">23 Pages</option>
+                <option value="24">24 Pages</option>
+                <option value="25">25 Pages</option>
+                <option value="26">26 Pages</option>
+                <option value="27">27 Pages</option>
+                <option value="28">28 Pages</option>
+                <option value="29">29 Pages</option>
+                <option value="30">30 Pages</option>
+                <option value="31">31 Pages</option>
+                <option value="32">32 Pages</option>
+                <option value="33">33 Pages</option>
+                <option value="34">34 Pages</option>
+                <option value="35">35 Pages</option>
+                <option value="36">36 Pages</option>
+                <option value="37">37 Pages</option>
+                <option value="38">38 Pages</option>
+                <option value="39">39 Pages</option>
+                <option value="40">40 Pages</option>
+                <option value="41">41 Pages</option>
+                <option value="42">42 Pages</option>
+                <option value="43">43 Pages</option>
+                <option value="44">44 Pages</option>
+                <option value="45">45 Pages</option>
+                <option value="46">46 Pages</option>
+                <option value="47">47 Pages</option>
+                <option value="48">48 Pages</option>
+                <option value="49">49 Pages</option>
+                <option value="50">50 Pages</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>Additional pages at R30 each</li>
+                <li>2 design revisions</li>
+                <li>Print-ready files</li>
+            </ul>
+
+            <button class="design-btn">Select Standard</button>
+        </div>
+    </div>
+</div>
+
+<!-- Product Design -->
+<div class="design-service-card" data-service="product-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Product Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R300</div>
+            <p class="design-service-description">Conceptual graphic design for products.</p>
+            <ul class="design-features-list">
+                 <li>1 page design</li>
+                <li>2 revision rounds</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Comprehensive product design package.</p>
+            <ul class="design-features-list">
+                <li>1 page design</li>
+                <li>3 revision rounds</li>
+                <li>1 design showcase</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R900</div>
+            <p class="design-service-description">Premium product design with complete packaging.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                 <li>1 page design</li>
+                 <li>5 revision rounds</li>
+                 <li>1 design pro showcase</li>
+                 <li>3 full redesign concepts (if needed)</li>
+                 <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Sticker/Product Label Design -->
+<div class="design-service-card" 
+     data-service="Sticker/Product-Label-design" 
+     data-pricing="per-design" 
+     data-base="200" 
+     data-extra="60">
+
+    <div class="design-service-content">
+        <h3 class="design-service-title">Sticker/Product Label Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="standard">Standard</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="standard">
+            <div class="design-service-price">R200 + R60/design</div>
+            <p class="design-service-description">Custom sticker and product label designs.</p>
+
+            <!-- Page Selector -->
+            <div class="design-section-controls">
+                <div class="design-section-selector">
+                    <select class="design-page-count">
+                <option value="1">1 design</option>
+                <option value="2">2 designs</option>
+                <option value="3">3 designs</option>
+                <option value="4">4 designs</option>
+                <option value="5">5 designs</option>
+                <option value="6">6 designs</option>
+                <option value="7">7 designs</option>
+                <option value="8">8 designs</option>
+                <option value="9">9 designs</option>
+                <option value="10">10 designs</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>Additional designs at R60 each</li>
+                <li>3 design revisions</li>
+                <li>Print-ready files</li>
+            </ul>
+
+            <button class="design-btn">Select Standard</button>
+        </div>
+    </div>
+</div>
+
+<!-- Vehicle Magnet Branding -->
+<div class="design-service-card" data-service="vehicle-magnet-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Vehicle Magnet Branding</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R300</div>
+            <p class="design-service-description">Dynamic vehicle magnet designs.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>2 revision round</li>
+                <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Comprehensive vehicle magnet package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R900</div>
+            <p class="design-service-description">Premium vehicle magnet design with complete fleet branding.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>unlimited revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Event Ticket Design -->
+<div class="design-service-card" data-service="ticket-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Event Ticket Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R100</div>
+            <p class="design-service-description">Custom event ticket designs with security features.</p>
+            <ul class="design-features-list">
+                 <li>1 design concept</li>
+                <li>2 revision round</li>
+                <li>Print-ready files</li>
+                <li>Advanced security features</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R200</div>
+            <p class="design-service-description">Comprehensive event ticket package.</p>
+            <ul class="design-features-list">
+                 <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>Advanced security features</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R300</div>
+            <p class="design-service-description">Premium event ticket design with advanced security.</p>
+            <ul class="design-features-list">
+                 <li>first priority</li>
+                <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>Advanced security features</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Billboard Design -->
+<div class="design-service-card" data-service="billboard-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Billboard Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">High-impact billboard designs for maximum visibility.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>4 revision round</li>
+                <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R1200</div>
+            <p class="design-service-description">Comprehensive billboard package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>unlimited revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R1800</div>
+            <p class="design-service-description">Premium billboard design with complete campaign.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>unlimited revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>5 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Brand Identity Pack -->
+<div class="design-service-card" data-service="brand-identity">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Brand Identity Pack</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R800</div>
+            <p class="design-service-description">Basic branding materials including logo and color palette.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>Logo design</li>
+                <li>Color palette</li>
+                <li>Typography selection</li>
+                <li>3 design revisions</li>
+                <li>Basic brand guidelines</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R1600</div>
+            <p class="design-service-description">Comprehensive brand identity package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>Logo design</li>
+                <li>Color palette</li>
+                <li>Typography system</li>
+                <li>unlimited design revisions</li>
+                <li>Complete brand guidelines</li>
+                <li>Business card design</li>
+                <li>Letterhead design</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R2400</div>
+            <p class="design-service-description">Complete branding solution for established companies.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>Logo design</li>
+                <li>Color palette</li>
+                <li>Typography system</li>
+                <li>unlimited revisions</li>
+                <li>Comprehensive brand guidelines</li>
+                <li>Full stationery suite</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- T-Shirt Design -->
+<div class="design-service-card" data-service="tshirt-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">T-Shirt Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R300</div>
+            <p class="design-service-description">Creative t-shirt designs for merchandising.</p>
+            <ul class="design-features-list">
+               <li>1 design concept</li>
+                <li>2 revision round</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Comprehensive t-shirt design package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R900</div>
+            <p class="design-service-description">Premium t-shirt design with complete merchandise line.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Event Backdrop Design -->
+<div class="design-service-card" data-service="backdrop-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Event Backdrop Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Stunning backdrop designs for events.</p>
+            <ul class="design-features-list">
+               <li>1 design concept</li>
+                <li>3 revision round</li>
+                <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R800</div>
+            <p class="design-service-description">Comprehensive backdrop design package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>5 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R1200</div>
+            <p class="design-service-description">Premium backdrop design with complete event branding.</p>
+            <ul class="design-features-list">
+               <li>first priority</li>
+                <li>1 design concept</li>
+                <li>unlimited revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+ <div class="design-container">        
+        <div class="design-grid">
+            <!-- Showcase Item 3 -->
+            <div class="design-showcase-container">
+                <img src="/assets/images/showcase3" alt="Brand Identity Design" class="design-showcase-image">
+            </div>
+        </div>
+    </div>
+
+<!-- Certificate Design -->
+<div class="design-service-card" 
+     data-service="certificate-design" 
+     data-pricing="per-page" 
+     data-base="200" 
+     data-extra="30">
+
+    <div class="design-service-content">
+        <h3 class="design-service-title">Certificate Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="standard">Standard</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="standard">
+            <div class="design-service-price">R200 + R30/page</div>
+            <p class="design-service-description">Elegant certificate design for awards and recognition.</p>
+
+            <!-- Page Selector -->
+            <div class="design-section-controls">
+                <div class="design-section-selector">
+                    <select class="design-page-count">
+                <option value="1">1 Page</option>
+                <option value="2">2 Pages</option>
+                <option value="3">3 Pages</option>
+                <option value="4">4 Pages</option>
+                <option value="5">5 Pages</option>
+                <option value="6">6 Pages</option>
+                <option value="7">7 Pages</option>
+                <option value="8">8 Pages</option>
+                <option value="9">9 Pages</option>
+                <option value="10">10 Pages</option>
+                <option value="11">11 Pages</option>
+                <option value="12">12 Pages</option>
+                <option value="13">13 Pages</option>
+                <option value="14">14 Pages</option>
+                <option value="15">15 Pages</option>
+                <option value="16">16 Pages</option>
+                <option value="17">17 Pages</option>
+                <option value="18">18 Pages</option>
+                <option value="19">19 Pages</option>
+                <option value="20">20 Pages</option>
+                <option value="21">21 Pages</option>
+                <option value="22">22 Pages</option>
+                <option value="23">23 Pages</option>
+                <option value="24">24 Pages</option>
+                <option value="25">25 Pages</option>
+                <option value="26">26 Pages</option>
+                <option value="27">27 Pages</option>
+                <option value="28">28 Pages</option>
+                <option value="29">29 Pages</option>
+                <option value="30">30 Pages</option>
+                <option value="31">31 Pages</option>
+                <option value="32">32 Pages</option>
+                <option value="33">33 Pages</option>
+                <option value="34">34 Pages</option>
+                <option value="35">35 Pages</option>
+                <option value="36">36 Pages</option>
+                <option value="37">37 Pages</option>
+                <option value="38">38 Pages</option>
+                <option value="39">39 Pages</option>
+                <option value="40">40 Pages</option>
+                <option value="41">41 Pages</option>
+                <option value="42">42 Pages</option>
+                <option value="43">43 Pages</option>
+                <option value="44">44 Pages</option>
+                <option value="45">45 Pages</option>
+                <option value="46">46 Pages</option>
+                <option value="47">47 Pages</option>
+                <option value="48">48 Pages</option>
+                <option value="49">49 Pages</option>
+                <option value="50">50 Pages</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>Additional pages at R30 each</li>
+                <li>2 design revisions</li>
+                <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+
+            <button class="design-btn">Select Standard</button>
+        </div>
+    </div>
+</div>
+
+<!-- Door/Window Vinyl Branding -->
+<div class="design-service-card" data-service="vinyl-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Door/Window Vinyl Branding</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R400</div>
+            <p class="design-service-description">Custom vinyl decal designs for glass doors and windows.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>2 revision round</li>
+                <li>Print-ready files</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R800</div>
+            <p class="design-service-description">Comprehensive vinyl branding package.</p>
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>Print-ready files</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">R1200</div>
+            <p class="design-service-description">Premium vinyl branding with complete window graphics system.</p>
+            <ul class="design-features-list">
+                 <li>first priority</li>
+                <li>1 design concept</li>
+                <li>unlimited revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>Print-ready files</li>
+                <li>3 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+<!-- Presentation Slide Design -->
+<div class="design-service-card" 
+     data-service="presentation-design" 
+     data-pricing="per-page" 
+     data-base="200" 
+     data-extra="200">
+
+    <div class="design-service-content">
+        <h3 class="design-service-title">Presentation Slide Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="standard">Standard</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="standard">
+            <div class="design-service-price">R200 + R200/page</div>
+            <p class="design-service-description">Professional slide deck design for presentations.</p>
+
+            <!-- Page Selector -->
+            <div class="design-section-controls">
+                <div class="design-section-selector">
+                    <select class="design-page-count">
+                <option value="1">1 Page</option>
+                <option value="2">2 Pages</option>
+                <option value="3">3 Pages</option>
+                <option value="4">4 Pages</option>
+                <option value="5">5 Pages</option>
+                <option value="6">6 Pages</option>
+                <option value="7">7 Pages</option>
+                <option value="8">8 Pages</option>
+                <option value="9">9 Pages</option>
+                <option value="10">10 Pages</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="design-features-list">
+                <li>1 design concept</li>
+                <li>Additional slides at R200 each</li>
+                <li>2 design revisions</li>
+                <li>Editable files</li>
+                <li>Up to 10 slides maximum</li>
+            </ul>
+
+            <button class="design-btn">Select Standard</button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Menu Board Slide Design -->
+<div class="design-service-card" 
+     data-service="Menu-Board-design" 
+     data-pricing="per-page" 
+     data-base="400" 
+     data-extra="400">
+
+    <div class="design-service-content">
+        <h3 class="design-service-title">Menu Board Slide Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="standard">Standard</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="standard">
+            <div class="design-service-price">R400 + R400/slide</div>
+            <p class="design-service-description">Digital menu board designs for restaurants.</p>
+
+            <!-- Page Selector -->
+            <div class="design-section-controls">
+                <div class="design-section-selector">
+                    <select class="design-page-count">
+                <option value="1">1 Slide</option>
+                <option value="2">2 Slides</option>
+                <option value="3">3 Slides</option>
+                <option value="4">4 Slides</option>
+                <option value="5">5 Slides</option>
+                <option value="6">6 Slides</option>
+                <option value="7">7 Slides</option>
+                <option value="8">8 Slides</option>
+                <option value="9">9 Slides</option>
+                <option value="10">10 Slides</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="design-features-list">
+                <li>1 slide design</li>
+                <li>Additional slides at R400 each</li>
+                <li>3 design revisions</li>
+                <li>High-resolution files</li>
+                <li>Up to 10 slides maximum</li>
+            </ul>
+
+            <button class="design-btn">Select Standard</button>
+        </div>
+    </div>
+</div>
+
+<!-- Company Profile Design -->
+<div class="design-service-card" data-service="company-profile-design">
+    <div class="design-service-content">
+        <h3 class="design-service-title">Company Profile Design</h3>
+        
+        <div class="design-tier-selector">
+            <div class="design-tier-option active" data-tier="starter">Starter</div>
+            <div class="design-tier-option" data-tier="premium">Premium</div>
+            <div class="design-tier-option" data-tier="pro">Pro</div>
+        </div>
+        
+        <div class="design-tier-details active" data-tier="starter">
+            <div class="design-service-price">R600</div>
+            <p class="design-service-description">Professional company profile document design.</p>
+            <ul class="design-features-list">
+               <li>1 design concept</li>
+                <li>1 revision round</li>
+                 <li>1-2 sided pages</li>
+                  <li>Print-ready files</li>
+            </ul>
+            <button class="design-btn">Select Starter</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="premium">
+            <div class="design-service-price">R800</div>
+            <p class="design-service-description">Comprehensive company profile package.</p>
+            <ul class="design-features-list">
+               <li>1 design concept</li>
+                <li>3 revisions rounds</li>
+                <li>1 design showcase</li>
+                <li>1-2 sided pages</li>
+                 <li>Print-ready files</li>
+                <li>1 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Premium</button>
+        </div>
+        
+        <div class="design-tier-details" data-tier="pro">
+            <div class="design-service-price">1600</div>
+            <p class="design-service-description">Premium company profile design with maximum customization.</p>
+            <ul class="design-features-list">
+                <li>first priority</li>
+                <li>1 design concept</li>
+                <li>unlimited revisions rounds</li>
+                <li>1 design pro showcase</li>
+                <li>1-2 sided pages</li>
+                <li>Print-ready files</li>
+                <li>2 full redesign concept (if needed)</li>
+                <li>delivery: project.zip</li>
+            </ul>
+            <button class="design-btn">Select Pro</button>
+        </div>
+    </div>
+</div>
+
+            <!-- Website design -->
+       <div class="design-service-card" data-service="website-design">
+        <div class="design-service-content">
+            <h3 class="design-service-title">Website Design</h3>
+            
+            <div class="design-tier-selector">
+                <div class="design-tier-option active" data-tier="starter">Starter</div>
+                <div class="design-tier-option" data-tier="premium">Premium</div>
+                <div class="design-tier-option" data-tier="pro">Pro</div>
+            </div>
+            
+            <!-- STARTER TIER -->
+            <div class="design-tier-details active" data-tier="starter">
+                <div class="design-section-controls">
+                    <div class="design-section-selector">
+                        <select id="design-sections" class="design-section-count">
+                            <option value="1">1 Section (R900)</option>
+                            <option value="2">2 Sections (R1,800)</option>
+                            <option value="3">3 Sections (R2,700)</option>
+                            <option value="4">4 Sections (R3,600)</option>
+                            <option value="5">5 Sections (R4,500)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="design-section-features">
+                    <div data-sections="1">
+                        <h4>Landing Page:</h4>
+                        <ul>
+                            <li>1 page section</li>
+                            <li>domain registration</li>
+                            <li>ui animations</li>
+                            <li>internet hosting R50/pm</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="2" style="display:none">
+                        <h4>2-Section Website:</h4>
+                        <ul>
+                            <li>2 page sections</li>
+                            <li>domain registration</li>
+                            <li>ui animations</li>
+                            <li>internet hosting R50/pm</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="3" style="display:none">
+                        <h4>3-Section Website:</h4>
+                        <ul>
+                            <li>3 page sections</li>
+                            <li>domain registration</li>
+                            <li>ui animations</li>
+                            <li>free 1 year internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="4" style="display:none">
+                        <h4>4-Section Website:</h4>
+                        <ul>
+                             <li>4 page sections</li>
+                            <li>domain registration</li>
+                            <li>ui animations</li>
+                            <li>free 2 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="5" style="display:none">
+                        <h4>5-Section Website:</h4>
+                        <ul>
+                             <li>5 page sections</li>
+                            <li>domain registration</li>
+                            <li>ui animations</li>
+                            <li>free 2 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                </div>
+            
+            <div class="design-addons-grid">
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-form" class="design-addon" data-price="600">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-form" class="design-addon-label">Contact Form (+R600)</label>
+                </div>
+                
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-login" class="design-addon" data-price="2500">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-login" class="design-addon-label">Login System (+R2,500)</label>
+                </div>
+                
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-database" class="design-addon" data-price="6000">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-database" class="design-addon-label">Database (+R6,000)</label>
+                </div>
+            </div>
+            
+            <div class="design-price-total">
+                <span>Price:</span>
+                <span class="design-total-price">R900</span>
+            </div>
+            
+            <button class="design-btn">Get Started</button>
+        </div>
+        <!-- PREMIUM TIER -->
+            <div class="design-tier-details" data-tier="premium">
+                <div class="design-section-controls">
+                    <div class="design-section-selector">
+                        <select id="design-sections-premium" class="design-section-count">
+                            <option value="1">1 Section (R1,800)</option>
+                            <option value="2">2 Sections (R3,600)</option>
+                            <option value="3">3 Sections (R5,400)</option>
+                            <option value="4">4 Sections (R7,200)</option>
+                            <option value="5">5 Sections (R9,000)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="design-section-features">
+                    <div data-sections="1">
+                        <h4>Premium Landing Page:</h4>
+                        <ul>
+                            <li>1 page sections</li>
+                            <li>domain registration</li>
+                            <li>ux animations</li>
+                            <li>free 1 year internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="2" style="display:none">
+                        <h4>Premium 2-Section Website:</h4>
+                        <ul>
+                            <li>2 page sections</li>
+                            <li>domain registration</li>
+                            <li>ux animations</li>
+                            <li>free 1 year internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="3" style="display:none">
+                        <h4>Premium 3-Section Website:</h4>
+                        <ul>
+                            <li>3 page sections</li>
+                            <li>domain registration</li>
+                            <li>ux animations</li>
+                            <li>free 2 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="4" style="display:none">
+                        <h4>Premium 4-Section Website:</h4>
+                        <ul>
+                            <li>4 page sections</li>
+                            <li>website amations</li>
+                            <li>domain registration</li>
+                            <li>ux animations</li>
+                            <li>free professional email</li>
+                            <li>free 2 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="5" style="display:none">
+                        <h4>Premium 5-Section Website:</h4>
+                        <ul>
+                           <li>5 page sections</li>
+                            <li>website amations</li>
+                            <li>domain registration</li>
+                            <li>ux animations</li>
+                            <li>free professional email</li>
+                            <li>free 2 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                </div>
+            
+            <div class="design-addons-grid">
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-form-premium" class="design-addon" data-price="1200">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-form-premium" class="design-addon-label">Advanced Form (+R1,200)</label>
+                </div>
+                
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-login-premium" class="design-addon" data-price="5000">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-login-premium" class="design-addon-label">Member System (+R5,000)</label>
+                </div>
+                
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-database-premium" class="design-addon" data-price="12000">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-database-premium" class="design-addon-label">Database (+R12,000)</label>
+                </div>
+            </div>
+            
+            <div class="design-price-total">
+                <span>Total:</span>
+                <span class="design-total-price">R1,800</span>
+            </div>
+            
+            <button class="design-btn">Get Premium</button>
+        </div>
+        
+        <!-- PRO TIER -->
+            <div class="design-tier-details" data-tier="pro">
+                <div class="design-section-controls">
+                    <div class="design-section-selector">
+                        <select id="design-sections-pro" class="design-section-count">
+                            <option value="1">1 Section (R2,700)</option>
+                            <option value="2">2 Sections (R5,400)</option>
+                            <option value="3">3 Sections (R8,100)</option>
+                            <option value="4">4 Sections (R10,800)</option>
+                            <option value="5">5 Sections (R13,500)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="design-section-features">
+                    <div data-sections="1">
+                        <h4>Pro Landing Page:</h4>
+                        <ul>
+                            <li>1 page sections</li>
+                            <li>website amations</li>
+                            <li>domain registration</li>
+                            <li>hero & motion animations</li>
+                            <li>free 1 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="2" style="display:none">
+                        <h4>Pro 2-Section Website:</h4>
+                        <ul>
+                           <li>2 page sections</li>
+                            <li>website amations</li>
+                            <li>domain registration</li>
+                            <li>hero & motion animations</li>
+                            <li>free 2 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="3" style="display:none">
+                        <h4>Pro 3-Section Website:</h4>
+                        <ul>
+                            <li>3 page sections</li>
+                            <li>website amations</li>
+                            <li>domain registration</li>
+                            <li>hero & motion animations</li>
+                            <li>free professional email</li>
+                            <li>free 2 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="4" style="display:none">
+                        <h4>Pro 4-Section Website:</h4>
+                        <ul>
+                            <li>4 page sections</li>
+                            <li>website amations</li>
+                            <li>domain registration</li>
+                            <li>hero & motion animations</li>
+                            <li>free professional email</li>
+                            <li>free 2 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                    <div data-sections="5" style="display:none">
+                        <h4>Pro 5-Section Website:</h4>
+                        <ul>
+                            <li>5 page sections</li>
+                            <li>website amations</li>
+                            <li>domain registration</li>
+                            <li>hero & motion animations</li>
+                            <li>free professional email</li>
+                            <li>free 3 years internet hosting</li>
+                            <li>free customer form page</li>
+                            <li>project.html</li>
+                        </ul>
+                    </div>
+                </div>
+            
+            <div class="design-addons-grid">
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-form-pro" class="design-addon" data-price="1800">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-form-pro" class="design-addon-label">Enterprise Form (+R1,800)</label>
+                </div>
+                
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-login-pro" class="design-addon" data-price="7500">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-login-pro" class="design-addon-label">Advanced Login (+R7,500)</label>
+                </div>
+                
+                <div class="design-addon-item">
+                    <label class="design-toggle-switch">
+                        <input type="checkbox" id="design-add-database-pro" class="design-addon" data-price="18000">
+                        <span class="design-slider"></span>
+                    </label>
+                    <label for="design-add-database-pro" class="design-addon-label">Enterprise DB (+R18,000)</label>
+                </div>
+            </div>
+            
+            <div class="design-price-total">
+                <span>Total:</span>
+                <span class="design-total-price">R2,700</span>
+            </div>
+            
+            <button class="design-btn">Get Pro</button>
+        </div>
+    </div>
+</div>
+            </div>
+
+            </div>
+    </section>
+
+    
+<section class="bottom-menu d-lg-none">
+    <div class="container">
+        <div class="row justify-content-around align-items-center">
+            <!-- Shop Icon -->
+            <div class="col-3 text-center">
+                <a href="#" class="menu-item">
+                    <img src="/assets/icons/shop.png" alt="Shop" class="menu-icon">
+                    <span class="menu-text">Shop</span>
+                </a>
+            </div>
+
+            <!-- Wishlist Icon -->
+            <div class="col-3 text-center">
+                <a href="#" class="menu-item">
+                    <img src="/assets/icons/heart-react.png" alt="Wishlist" class="menu-icon">
+                    <span class="menu-text">Wishlist</span>
+                </a>
+            </div>
+
+              <!-- Cart Icon -->
+            <div class="col-3 text-center">
+                <a class="menu-item cart-trigger" href="#" id="cart-icon">
+                    <img src="assets/icons/bag.png" alt="Cart" class="menu-icon">
+                    <span class="menu-text">Cart</span>
+                    <span class="cart-counter badge badge-pill badge-danger" style="margin: 0px; top: -4px; right: 22px;">0</span>
+                </a>
+            </div>
+
+            <!-- Profile Icon -->
+            <div class="col-3 text-center">
+                <a href="#" class="menu-item" onclick="showAuth()">
+                    <img src="/assets/icons/user.png" alt="Profile" class="menu-icon">
+                    <span class="menu-text">Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cart Section (Hidden by Default) -->
+<section class="cart-section" id="cart-section">
+    
+    <!-- Cart Header -->
+    <div class="cart-header">
+        <div class="cart-header-left">
+            <button class="btn btn-back" id="cart-close">
+                <img src="/assets/icons/back-arrow.png" alt="Back" class="icon">
+            </button>
+            <span class="cart-title">Cart</span>
+        </div>
+        <div class="currency-selector">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/1200px-Flag_of_South_Africa.svg.png" alt="SA Flag" class="flag-icon">
+                <span class="currency-text" style="margin-top: 4px;">ZAR</span>
+            </div>
+    </div>
+
+    <!-- Cart Title -->
+    <div class="cart-title-container">
+        <img style="border-radius: 10px;" src="/assets/images/cart-title-image.png" alt="Cart Title Image" class="cart-title-image">
+        <p class="cart-subtitle">Your Design Journey - Design more than you can imagine with <strong> DesignMORE.</strong></p>
+    </div>
+
+    <!-- Cart Body (Items added here dynamically) -->
+    <div class="cart-body">
+
+    </div>
+
+    <!-- Input Fields -->
+    <div class="input-fields">
+    
+        
+      <!-- Upload Sketch Overlay -->
+        <div id="upload-overlay" class="overlay">
+            <div class="upload-loader"></div>
+        </div>
+        
+        <!-- Upload Sketch -->
+        <div class="upload-sketch" style="margin-top: -40px;">
+            <label for="sketch-upload" class="upload-label">
+                <img src="/assets/icons/upload.png" alt="Upload" class="upload-icon">
+                <span>Upload Sketch (jpg, jpeg, png)</span>
+            </label>
+            <input type="file" id="sketch-upload" accept=".jpg, .jpeg, .png" class="upload-input">
+        </div>
+        <!-- Design Description -->
+        <div class="design-description">
+            <textarea id="design-description" placeholder="Enter design description..." class="description-input" minlength="10" maxlength="500"></textarea>
+        </div>
+    </div>
+
+    <!-- Cost Info -->
+    <div class="cost-info">
+        <p class="designs-added">Designs Added: <span id="designs-count">0</span></p>
+        <div class="total-amount">
+            <span class="total-text">Total</span>
+            <span class="total-value">R0.00</span>
+        </div>
+    </div>
+
+    <!-- Proceed Button -->
+    <div class="proceed-container">
+        <button class="btn btn-proceed" onclick="showAuth()" style="background-color: black; color: white;">Proceed to Cart</button>
+    </div>
+</section>
+
+<!-- Profile Page Section -->
+<section class="profile-page" id="profilePage">
+    <div class="profile-page-overlay" onclick="hideAuth()"></div>
+
+    <!-- Authentication Forms Container -->
+    <div class="auth-container" id="authContainer" style="z-index: 999999;">
+           <button class="auth-close-btn" onclick="closeProfilePage()" style="background-color: #004370;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2 class="form-title">Sign in</h2>
+            <form onsubmit="return signIn(event)">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary" style="background-color: #004370; margin-bottom: 10px;" >Sign in</button>
+                <!-- Button with local Google icon -->
+                <button type="button" class="google-btn" onclick="signInWithGoogle()" style="background-color: white; color: black;">
+                    <img src="/assets/icons/google-icon.png" alt="Google Icon"> 
+                    Sign in with Google
+                </button>                
+                <div class="toggle-form">
+                    Dont have account? <a onclick="showRegisterForm()">Register</a>
+                </div>
+                <div class="toggle-form">
+                    <a onclick="showPasswordReset()">Forgot password?</a>
+                </div>
+                <div class="error" id="loginError"></div>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registerForm" style="display: none;">
+            <h2 class="form-title">Create account</h2>
+            <form onsubmit="return signUp(event)">
+                <div class="form-group">
+                    <input type="text" id="registerName" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Create account</button>
+                <div class="toggle-form">
+                    Already have an account? <a onclick="showLoginForm()">Sign in</a>
+                </div>
+                <div class="error" id="registerError"></div>
+            </form>
+        </div>
+
+        <!-- Password Reset Form -->
+        <div id="passwordResetForm" style="display: none;">
+            <h2 class="form-title">Reset Password</h2>
+            <form onsubmit="return sendPasswordReset(event)">
+                <div class="form-group">
+                    <input type="email" id="resetEmail" placeholder="Email" required>
+                </div>
+                <button type="submit" class="btn-primary">Send Reset Email</button>
+                <div class="toggle-form">
+                    <a onclick="showLoginForm()">Back to login</a>
+                </div>
+                <div class="error" id="resetError"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="auth-container dashboard" id="dashboard">
+       <!-- Profile Container -->
+       <div class="profile-container">
+            <div class="profile-header">
+                <h2 class="profile-title"> <span id="username"></span></h2>
+                
+                <button class="settings-toggle" onclick="toggleSettings()" style="background-color: rgba(255, 255, 255, 0); width: 30px; outline: none;">
+                    <img src="/assets/icons/settings.png" alt="Settings" class="icon">
+                </button>
+               <button class="refresh-toggle" onclick="location.reload()" style="background-color: rgba(255, 255, 255, 0); width: 30px; outline: none; border: none; cursor: pointer;">
+                <img src="/assets/icons/back-refresh.png" alt="refresh" class="icon">
+                </button>
+
+            </div>
+            <div class="profile-body">
+                <div class="profile-info">
+                    <p class="profile-email">Email: <span id="userEmail"></span></p>
+                </div>
+
+                <div class="empty-state-container">
+
+                    <div class="contents-state" style="display: none;">
+                        <!-- Cart Items -->
+                        <div class="cart-items-list"></div>
+                        
+                        <!-- Total Amount -->
+                        <div class="cart-total-profile">
+                            <h4>Total Amount: <span class="total-value-profile">R0.00</span></h4>
+                        </div>
+                          <!-- Track Design Button -->
+                        <button class="btn-track-design" onclick="showTrackDesign()" style="margin-top: 20px; background-color: #004370;">Track Design</button>
+                        <!-- Clear Cart Button -->
+                        <button class="btn-clear-cart" onclick="clearCart()" style="background-color: rgb(223, 42, 42);">Delete Cart</button>
+                    </div>
+
+                    <p class="empty-state">You have nothing here</p>
+                </div>
+                
+                <!-- Payment Popup -->
+                <div id="paymentPopup" class="payment-popup" style="display: none;">
+                    <div class="payment-popup-content">
+                        <h2 class="payment-title">Type of Payment</h2>
+                        
+                        <!-- Payment Options -->
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="paymentType" value="cash">
+                                <span>Cash</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="paymentType" value="bank">
+                                <span>Bank</span>
+                            </label>
+                        </div>
+
+                        <!-- Accepted Payment Methods -->
+                        <div class="accepted-payment-methods">
+                            <h3>Payment Methods</h3>
+                            <div class="payment-images">
+                                <img src="/assets/images/visa-img.png" alt="Cash">
+                                <img src="/assets/images/mastercard-img.png" alt="Bank Transfer">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button class="btn-primary" onclick="submitPaymentChoice()">Submit</button>
+                    </div>
+                </div>
+
+                <!-- Track Design Section -->
+                <div id="trackDesignSection" class="track-design-section" style="display: none;">
+                    <div class="track-design-header">
+                        <h2>Track design</h2>
+                        <button class="btn-close-track-design" onclick="hideTrackDesign()" style=" 
+                        border: none;
+                        font-size: 20px;
+                        color: #ffffff;
+                        background-color: #0c0c1b;
+                        cursor: pointer;
+                        width: 36px;
+                        height: 36px;
+                        margin-bottom: 10px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease;">
+                         <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                
+                    <div class="user-info-card">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-details">
+                            <h3 id="trackUsername">John Doe</h3>
+                            <p id="trackEmail" class="truncate-email" >john@example.com</p>
+                            <div class="user-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="progress-container">
+                        <div class="progress-header">
+                            <h3>Your Design Journey</h3>
+                            <div class="progress-percentage" id="progressPercentage" hidden></div>
+                        </div>
+                        
+                        <div class="progress-track">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 25%;"></div>
+                            </div>
+                            
+                            <div class="progress-stages">
+                                <div class="stage completed" data-stage="Pending">
+                                    <div class="stage-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span>Pending</span>
+                                    <div class="stage-date"></div>
+                                </div>
+                                
+                                <div class="stage active" data-stage="Designing">
+                                    <div class="stage-icon">
+                                        <i class="fas fa-pencil-ruler"></i>
+                                    </div>
+                                    <span>Designing</span>
+                                    <div class="stage-date"></div>
+                                </div>
+                                
+                                <div class="stage" data-stage="Review">
+                                    <div class="stage-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <span>Review</span>
+                                    <div class="stage-date"></div>
+                                </div>
+                                
+                                <div class="stage" data-stage="Finished">
+                                    <div class="stage-icon">
+                                        <i class="fas fa-box-open"></i>
+                                    </div>
+                                    <span>Finished</span>
+                                    <div class="stage-date"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="status-cards">
+                        <div class="status-card payment">
+                            <div class="status-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="status-details">
+                                <h4>Payment Status</h4>
+                                <p id="paymentStatus" class="status-paid">Completed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="status-card timeline">
+                            <div class="status-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="status-details">
+                                <h4>Estimated Completion</h4>
+                                <p id="designDuration">May 15, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="action-buttons">
+                        <a href="https://wa.me/27817925033" class="whatsapp-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat with Designer
+                        </a>
+                        <a href="https://wa.me/27817925033" target="_blank">
+                            <button class="download-assets" style="background-color: #004370;">
+                            <i class="fas fa-download"></i> Download Assets
+                        </button></a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Settings Section (Hidden by Default) -->
+            <div class="settings-container" id="settingsContainer">
+                <div class="settings-section">
+                    <h3 class="settings-title" style="margin-top: 20px;">Account Details</h3>
+                    <p>Email Verified: <span id="emailVerified" class="not-verified-badge"></span></p>
+                    
+                    <div class="settings-actions">
+                        <button onclick="sendVerificationEmail()" class="btn-secondary" style="background-color: #004370;">
+                            Resend Verification Email
+                        </button>
+                        <button onclick="showChangePassword()" class="btn-secondary" style="background-color: #004370;">
+                            Change Password
+                        </button>
+                        <button onclick="deleteAccount()" class="btn-danger" style="background-color: #004370;">
+                            Delete Account
+                        </button>
+                        <button onclick="signOut()" class="btn-google" style="background-color: #004370;">
+                            Sign Out
+                        </button>
+                    </div>
+
+                    <!-- Password Change Form (Hidden by Default) -->
+                    <div id="changePasswordForm" class="password-form">
+                        <input type="password" id="newPassword" placeholder="New Password" required>
+                        <button onclick="changePassword()" class="btn-primary">
+                            Update Password
+                        </button>
+                        <div class="error" id="passwordError"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="/js/firebase.js"></script>
+<script type="module" src="js/cart.js"></script>
+<script  src="js/main.js"></script>
+
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                        const emailElement = document.getElementById("trackEmail");
+                        const email = emailElement.textContent.trim();
+                        
+                        if (email.length > 10) {
+                            emailElement.textContent = email.substring(0, 7) + "..."; // Shows first 7 chars + "..."
+                            emailElement.title = email; // Tooltip shows full email
+                        }
+                        });
+                    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tier selector functionality
+        document.querySelectorAll('.design-tier-selector .design-tier-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const parent = this.closest('.design-service-card');
+                const tier = this.dataset.tier;
+                
+                // Update active state
+                parent.querySelectorAll('.design-tier-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                
+                this.classList.add('active');
+                
+                // Show corresponding tier details
+                parent.querySelectorAll('.design-tier-details').forEach(details => {
+                    details.classList.remove('active');
+                });
+                
+                const activeTierDetails = parent.querySelector(`.design-tier-details[data-tier="${tier}"]`);
+                activeTierDetails.classList.add('active');
+                
+                // Update price and features for website service
+                if (parent.dataset.service === 'website-design') {
+                    updateWebsitePrice(activeTierDetails);
+                    updateSectionFeatures(activeTierDetails);
+                }
+            });
+        });
+        
+        // Update website price when sections or addons change
+        function updateWebsitePrice(tierDetails) {
+            const sectionCount = parseInt(tierDetails.querySelector('.design-section-count').value);
+            const tier = tierDetails.dataset.tier;
+            
+            // Calculate base price (R900 per section)
+            let basePrice = 900 * sectionCount;
+            
+            // Apply tier multiplier
+            let multiplier = 1;
+            if (tier === 'premium') multiplier = 2;
+            if (tier === 'pro') multiplier = 3;
+            
+            basePrice *= multiplier;
+            
+            // Calculate addons
+            let addonsPrice = 0;
+            
+            const formToggle = tierDetails.querySelector('#design-add-form, #design-add-form-premium, #design-add-form-pro');
+            const loginToggle = tierDetails.querySelector('#design-add-login, #design-add-login-premium, #design-add-login-pro');
+            const databaseToggle = tierDetails.querySelector('#design-add-database, #design-add-database-premium, #design-add-database-pro');
+            
+            if (formToggle && formToggle.checked) {
+                addonsPrice += parseInt(formToggle.dataset.price);
+            }
+            
+            if (loginToggle && loginToggle.checked) {
+                addonsPrice += parseInt(loginToggle.dataset.price);
+            }
+            
+            if (databaseToggle && databaseToggle.checked) {
+                addonsPrice += parseInt(databaseToggle.dataset.price);
+            }
+            
+            // Calculate total
+            const totalPrice = basePrice + addonsPrice;
+            tierDetails.querySelector('.design-total-price').textContent = `R${totalPrice.toLocaleString()}`;
+        }
+        
+        // Update visible features based on section selection
+        function updateSectionFeatures(tierDetails) {
+            const sectionSelect = tierDetails.querySelector('.design-section-count');
+            const selectedSections = sectionSelect.value;
+            
+            const featuresContainer = tierDetails.querySelector('.design-section-features');
+
+            featuresContainer.querySelectorAll('[data-sections]').forEach(section => {
+                section.style.display = section.dataset.sections === selectedSections ? 'block' : 'none';
+            });
+        }
+        
+        // Initialize section features on page load
+        document.querySelectorAll('.design-tier-details').forEach(tierDetails => {
+            if (tierDetails.closest('.design-service-card').dataset.service === 'website-design') {
+                updateSectionFeatures(tierDetails);
+            }
+        });
+        
+        // Event listeners for website service controls
+        document.querySelectorAll('.design-section-count').forEach(select => {
+            select.addEventListener('change', function() {
+                const tierDetails = this.closest('.design-tier-details');
+                updateWebsitePrice(tierDetails);
+                updateSectionFeatures(tierDetails);
+            });
+        });
+        
+        document.querySelectorAll('.design-addon').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const tierDetails = this.closest('.design-tier-details');
+                updateWebsitePrice(tierDetails);
+            });
+        });
+    });
+</script>
+
+
+<script>
+        // PROMO SCROLL ANIMATION
+        const promoTrack = document.querySelector('.promo-track');
+        if (promoTrack) {
+            promoTrack.parentElement.addEventListener('mouseenter', () => {
+                promoTrack.style.animationPlayState = 'paused';
+            });
+            
+            promoTrack.parentElement.addEventListener('mouseleave', () => {
+                promoTrack.style.animationPlayState = 'running';
+            });
+        }
+
+        // MOBILE MENU TOGGLE
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            
+            // Add animation class to menu items when opening
+            if (mobileMenu.classList.contains('active')) {
+                const items = document.querySelectorAll('.mobile-nav-item');
+                items.forEach((item, index) => {
+                    item.style.transitionDelay = `${0.2 + (index * 0.1)}s`;
+                });
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuButton.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // HIDE/SHOW SECOND NAV ON SCROLL
+        const quantumNav = document.getElementById('quantumNav');
+        let lastScrollPosition = 0;
+        const scrollThreshold = 100; 
+
+        window.addEventListener('scroll', () => {
+            const currentScrollPosition = window.pageYOffset;
+            
+            // Scrolling down
+            if (currentScrollPosition > lastScrollPosition && currentScrollPosition > scrollThreshold) {
+                quantumNav.style.transform = 'translateY(-100%)';
+                quantumNav.style.transition = 'transform 0.3s ease-out';
+            } 
+            // Scrolling up
+            else if (currentScrollPosition < lastScrollPosition) {
+                quantumNav.style.transform = 'translateY(0)';
+                quantumNav.style.transition = 'transform 0.3s ease-out';
+            }
+            
+            lastScrollPosition = currentScrollPosition;
+            
+            // Nav scrolled state for height change
+            if (currentScrollPosition > 20) {
+                quantumNav.classList.add('nav-scrolled');
+            } else {
+                quantumNav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+
+
+
+<script>
+
+// BECOME AN ADVERTISER
+// Advertiser Embed Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get advertiser elements
+    const advertiserEmbed = document.getElementById('advertiserEmbed');
+    const advertiserCloseBtn = document.getElementById('advertiserCloseBtn');
+    
+    // Click handler to "Become an Advertiser" link
+    const advertiserLink = document.querySelector('.show-advertiser-portal'); 
+    if (advertiserLink) {
+        advertiserLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            advertiserEmbed.classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Close functionality
+    advertiserCloseBtn.addEventListener('click', function() {
+        advertiserEmbed.classList.remove('active');
+        document.getElementById('overlay').classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    });
+</script>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('comingSoonPopup2');
+            const closePopupBtn = document.getElementById('closePopup2');
+            
+            // Click event to all buttons with IDs starting with "soon"
+            document.querySelectorAll('[id^="soon"]').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Show the popup
+                    popup.classList.add('active');
+                });
+            });
+            
+            // Close popup when close button is clicked
+            closePopupBtn.addEventListener('click', function() {
+                popup.classList.remove('active');
+            });
+            
+            // Close popup when clicking outside the content
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    popup.classList.remove('active');
+                }
+            });
+            
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popup.classList.contains('active')) {
+                    popup.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

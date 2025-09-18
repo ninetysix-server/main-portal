@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/images/icon.svg">
+    <title>Terms & Conditions - 96studios</title>
+    <style>
+        :root {
+            --primary: #0067B8;  
+            --dark: #004370;
+            --medium: #2F2F2F;
+            --light: #F2F2F2;
+            --white: #FFFFFF;
+            --accent: #009B5B;  
+            --border-radius: 2px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--medium);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .card ul {
+            list-style-type: none;
+        }
+        
+        .card li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .card li:before {
+            content: "•";
+            color: var(--primary);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        
+        .highlight-box {
+            background-color: var(--light);
+            border-left: 4px solid var(--accent);
+            padding: 25px;
+            margin: 40px 0;
+        }
+        
+        .highlight-box h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .fee-label {
+            font-weight: 600;
+        }
+        
+        .fee-value {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 40px 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            height: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h4 {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style-type: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ADADAD;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ADADAD;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+                padding: 0 20px;
+            }
+            
+            .content-section {
+                padding: 40px 0;
+            }
+        }
+
+                /*================NAVIGATION TAB================*/
+.breadcrumb {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 10px 0;
+    margin-left: 10px ;
+}
+
+.breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '/';
+    margin: 0 10px;
+    color: #999;
+    font-weight: 300;
+}
+
+.breadcrumb a {
+    color: #4285f4;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #3367d6;
+}
+
+.breadcrumb li:last-child {
+    color: #666;
+    font-weight: 500;
+}
+  
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>Terms & Conditions</h1>
+            <p>Clear guidelines for our design services and collaboration process</p>
+        </div>
+    </section>
+        <div class="breadcrumb">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li>Conditions</li>
+    </ul>
+</div>
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Service Terms</h2>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Payment Structure</h3>
+                    <ul>
+                        <li>40% deposit required to initiate design work</li>
+                        <li>60% balance due upon project completion</li>
+                        <li>Bank transfers require full upfront payment</li>
+                        <li>Deposits non-refundable after 24 hours or once work begins</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Project Timeline</h3>
+                    <ul>
+                        <li>Standard delivery time varies by project scope</li>
+                        <li>Rush service available for 30% surcharge</li>
+                        <li>Timeline begins after all required information is received</li>
+                        <li>Client response delays will extend the timeline</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Intellectual Property</h3>
+                    <ul>
+                        <li>Final design assets delivered after full payment</li>
+                        <li>96studios retains rights to display work in our portfolio</li>
+                        <li>Client assumes responsibility for provided materials</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Fee Structure</h3>
+                <div class="fee-item">
+                    <span class="fee-label">Additional Concept Designs</span>
+                    <span class="fee-value">+50% of project total</span>
+                </div>
+                <div class="fee-item">
+                    <span class="fee-label">Rush Service Fee</span>
+                    <span class="fee-value">+30% of project total</span>
+                </div>
+                <div class="fee-item">
+                    <span class="fee-label">Project Cancellation</span>
+                    <span class="fee-value">60% refund if canceled before delivery</span>
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Cash Payments</h3>
+                    <ul>
+                        <li>40% deposit to begin project</li>
+                        <li>60% balance due before final delivery</li>
+                        <li>60% refund available if canceled before work begins</li>
+                        <li>Digital receipt provided upon payment</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Bank Transfers</h3>
+                    <ul>
+                        <li>Full payment required before project starts</li>
+                        <li>60% refund if canceled before work begins</li>
+                        <li>Unique reference number required</li>
+                        <li>Electronic invoice provided</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Client Responsibilities</h3>
+                    <ul>
+                        <li>Provide complete project requirements</li>
+                        <li>Respond to proofs within agreed timeframe</li>
+                        <li>Communicate changes clearly and promptly</li>
+                        <li>Make payments according to schedule</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 96studios. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
